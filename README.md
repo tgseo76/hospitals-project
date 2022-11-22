@@ -13,3 +13,10 @@ url에 병원 id를 담아 요청하고 해당 병원 정보를 읽어옵니다.
 2. (Repository) DB에 id로 검색 작성.
 3. (Service) 영업중, 폐업 여부 판단 로직 및 ResponseDTO로 변환 작성.
 4. (Controller) 클라이언트의 요청을 Service와 연결 작성.
+
+## [미션] ID로 Member 조회
+
+### Entity
+
+### Endpoint
+`/api/v1/members/{id}`
