@@ -17,6 +17,7 @@ url에 병원 id를 담아 요청하고 해당 병원 정보를 읽어옵니다.
 ## [미션] ID로 Member 조회
 
 ### Entity
+![member](https://user-images.githubusercontent.com/77231274/203314619-8524015b-2012-4f4a-a557-1ebc812786e8.png)
 
 ### Endpoint
 `/api/v1/members/{id}`
