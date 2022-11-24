@@ -1,5 +1,6 @@
 package com.team13.hospital.service;
 
+import com.team13.hospital.domain.dto.MemberRequest;
 import com.team13.hospital.domain.dto.MemberResponse;
 import com.team13.hospital.domain.entity.Member;
 import com.team13.hospital.repository.MemberRepository;
@@ -15,6 +16,11 @@ public class MemberService {
 
     public MemberResponse findById(Long id) {
         Member member = memberRepository.findById(id).orElseThrow(() -> new RuntimeException("해당 멤버가 없음"));
+        return MemberResponse.of(member);
+    }
+
+    public MemberResponse create(MemberRequest memberRequest) {
+        Member member = memberRepository.save(memberRequest.toEntity());
         return MemberResponse.of(member);
     }
 }
