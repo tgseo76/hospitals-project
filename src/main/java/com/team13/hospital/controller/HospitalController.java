@@ -20,4 +20,6 @@ public class HospitalController {
     public Hospital findById(@PathVariable("id") Integer id) {
         return hospitalService.findById(id);
     }
+
+
 }
