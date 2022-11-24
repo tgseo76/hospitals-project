@@ -1,5 +1,6 @@
 package com.team13.hospital.controller;
 
+import com.team13.hospital.domain.dto.MemberResponse;
 import com.team13.hospital.domain.entity.Member;
 import com.team13.hospital.service.MemberService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +18,7 @@ public class MemberController {
     }
 
     @GetMapping("/{id}")
-    public Member get(@PathVariable("id") Long id) {
+    public MemberResponse get(@PathVariable("id") Long id) {
         return memberService.findById(id);
     }
 }
