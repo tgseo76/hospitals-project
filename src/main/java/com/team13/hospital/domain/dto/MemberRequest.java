@@ -1,9 +1,11 @@
 package com.team13.hospital.domain.dto;
 
 import com.team13.hospital.domain.entity.Member;
-import lombok.Setter;
+import lombok.*;
 
-@Setter
+@Builder
+@AllArgsConstructor
+@Getter
 public class MemberRequest {
     private String name;
     private String address;

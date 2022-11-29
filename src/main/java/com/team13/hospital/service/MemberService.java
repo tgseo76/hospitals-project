@@ -15,11 +15,12 @@ public class MemberService {
     }
 
     public MemberResponse findById(Long id) {
-        Member member = memberRepository.findById(id).orElseThrow(() -> new RuntimeException("해당 멤버가 없음"));
+        Member member = memberRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 멤버가 없음"));
         return MemberResponse.of(member);
     }
 
     public MemberResponse create(MemberRequest memberRequest) {
+        if (memberRepository.existsByName(memberRequest.getName())) throw new IllegalArgumentException("이미 존재하는 이름입니다.");
         Member member = memberRepository.save(memberRequest.toEntity());
         return MemberResponse.of(member);
     }
