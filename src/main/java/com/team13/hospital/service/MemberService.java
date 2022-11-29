@@ -20,6 +20,7 @@ public class MemberService {
     }
 
     public MemberResponse create(MemberRequest memberRequest) {
+        if (memberRepository.existsByName(memberRequest.getName())) throw new RuntimeException("이미 존재하는 이름입니다.");
         Member member = memberRepository.save(memberRequest.toEntity());
         return MemberResponse.of(member);
     }
