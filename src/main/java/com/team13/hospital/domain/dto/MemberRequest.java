@@ -5,7 +5,7 @@ import lombok.*;
 
 @Builder
 @AllArgsConstructor
-@Getter @Setter
+@Getter
 public class MemberRequest {
     private String name;
     private String address;

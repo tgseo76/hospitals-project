@@ -35,6 +35,7 @@ class MemberServiceTest {
                 .build();
 
         given(memberRepository.save(any(Member.class))).willReturn(memberRequest.toEntity());
+        given(memberRepository.existsByName("홍길동")).willReturn(false);
 
         // when
         MemberResponse result = memberService.create(memberRequest);
@@ -56,6 +57,6 @@ class MemberServiceTest {
 
         given(memberRepository.existsByName(any())).willReturn(true);
 
-        assertThrows(RuntimeException.class, () -> memberService.create(memberRequest));
+        assertThrows(IllegalArgumentException.class, () -> memberService.create(memberRequest));
     }
 }
